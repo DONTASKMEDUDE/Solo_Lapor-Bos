@@ -1,0 +1,50 @@
+/* File: frontend/css/style.css */
+/* Kalau butuh style aneh-aneh yang nggak ada di Tailwind, tulis di sini. */
+
+/* Kita pakai font Inter biar lebih modern dan enak dibaca */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animasi sederhana biar ganti halaman nggak kaku */
+.view {
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling buat garis vertikal di timeline laporan */
+.timeline-item:not(:last-child) {
+    padding-bottom: 1.5rem;
+    border-left: 2px solid #dbeafe; /* Atur warna garis */
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2.5rem; /* Jarak dari garis */
+    margin-left: 0.75rem;
+}
+
+/* Buletan di setiap item timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -11px; /* Posisi buletan pas di atas garis */
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #3b82f6; /* Warna buletan */
+    border: 4px solid #dbeafe; /* Lingkaran luar buletan */
+}

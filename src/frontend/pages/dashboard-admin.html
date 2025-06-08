@@ -1,0 +1,47 @@
+<!-- File: frontend/pages/dashboard-admin.html -->
+<!-- Tampilan utama setelah admin berhasil login. -->
+
+<div class="view max-w-7xl mx-auto p-4">
+    <!-- Header -->
+    <header class="bg-white p-4 rounded-lg shadow-md mb-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-800"><i class="fas fa-user-shield text-blue-600"></i> Dashboard Admin</h1>
+        <div class="flex items-center">
+            <span id="admin-name" class="hidden sm:inline mr-4 text-gray-700"></span>
+            <button id="logout-btn" class="nav-link text-gray-500 hover:text-red-600 font-semibold" data-view="login"><i class="fas fa-sign-out-alt mr-1"></i> <span class="hidden sm:inline">Logout</span></button>
+        </div>
+    </header>
+
+    <!-- Statistik & Grafik -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-lg font-bold mb-4">Statistik Laporan</h3>
+            <div class="h-64"><canvas id="reports-status-chart"></canvas></div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-lg font-bold mb-4">Laporan per Kategori</h3>
+            <div class="h-64"><canvas id="reports-category-chart"></canvas></div>
+        </div>
+    </section>
+
+    <!-- Tabel Semua Laporan -->
+    <section class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4">Semua Laporan Masuk</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="p-3 font-semibold">Tanggal</th>
+                        <th class="p-3 font-semibold hidden md:table-cell">Pelapor</th>
+                        <th class="p-3 font-semibold">Kategori</th>
+                        <th class="p-3 font-semibold">Status</th>
+                        <th class="p-3 font-semibold hidden lg:table-cell">Petugas</th>
+                        <th class="p-3 font-semibold">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-reports-table">
+                    <!-- Data semua laporan bakal disuntik ke sini sama JS -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
